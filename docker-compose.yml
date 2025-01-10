@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile  
+    container_name: fastapi-app 
+    ports:
+      - "8000:8000"  
+    volumes:
+      - chatbox-sqlite-data:/app/database
+    env_file:
+      - .env
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+
+volumes:
+  chatbox-sqlite-data:

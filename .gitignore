@@ -3,4 +3,5 @@ __pycache__/
 .idea/
 *.pyc
 *.db.env
+*.sqlite3
 .env
